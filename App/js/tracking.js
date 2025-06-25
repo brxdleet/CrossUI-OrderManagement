@@ -10,26 +10,26 @@ xui.Class('App.products', 'xui.Module',{
                 xui.create("xui.APICaller")
                 .setHost(host,"api_list")
                 .setQueryURL("{xui.constant.request_url}")
-                .setProxyType("auto")
                 .setQueryArgs({
                     "key" : "products",
                     "paras" : {
                         "action" : "list"
                     }
                 })
+                .setProxyType("auto")
             );
             
             append(
                 xui.create("xui.APICaller")
                 .setHost(host,"api_del")
                 .setQueryURL("{xui.constant.request_url}")
-                .setProxyType("auto")
                 .setQueryArgs({
                     "key" : "products",
                     "paras" : {
                         "action" : "delete"
                     }
                 })
+                .setProxyType("auto")
             );
             
             append(
@@ -37,8 +37,8 @@ xui.Class('App.products', 'xui.Module',{
                 .setHost(host,"mainDlg")
                 .setLeft("4.166666666666667em")
                 .setTop("1.6666666666666667em")
-                .setWidth("40.833333333333336em")
-                .setHeight("24.166666666666668em")
+                .setWidth("77.79047619047618em")
+                .setHeight("46.095238095238095em")
                 .setResizer(false)
                 .setCaption("Products")
                 .setImage("{/}img/app.png")
@@ -50,234 +50,10 @@ xui.Class('App.products', 'xui.Module',{
             );
             
             host.mainDlg.append(
-                xui.create("xui.UI.Block")
-                .setHost(host,"mainPane")
-                .setLeft("0.5em")
-                .setTop("0.5833333333333334em")
-                .setWidth("38.666666666666664em")
-                .setHeight("16.916666666666668em")
-                .setBorderType("inset")
-            );
-            
-            host.mainPane.append(
-                xui.create("xui.Module.PageGrid", "xui.Module")
-                .setHost(host,"module_grideditor1")
-                .setProperties({
-                    "valueColumn" : "ProductID",
-                    "captionExpression" : "ProductName",
-                    "__inner_coms_prf__" : {
-                        "grid" : {
-                            "properties" : {
-                                "header" : [
-                                    {
-                                        "id" : "ProductID",
-                                        "caption" : "Product ID",
-                                        "width" : "8em",
-                                        "type" : "number"
-                                    },
-                                    {
-                                        "id" : "ProductName",
-                                        "caption" : "Product Name",
-                                        "width" : "12em",
-                                        "type" : "input"
-                                    },
-                                    {
-                                        "id" : "UnitPrice",
-                                        "caption" : "Unit Price",
-                                        "width" : "6em",
-                                        "type" : "currency"
-                                    },
-                                    {
-                                        "id" : "InStock",
-                                        "caption" : "In Stock",
-                                        "width" : "6em",
-                                        "type" : "checkbox"
-                                    }
-                                ],
-                                "uidColumn" : "ProductID"
-                            }
-                        }
-                    }
-                })
-                .setEvents({
-                    "onListRecords" : [
-                        {
-                            "desc" : "set page",
-                            "type" : "control",
-                            "target" : "api_list",
-                            "args" : [
-                                "{page.api_list.setQueryArgs()}",
-                                undefined,
-                                undefined,
-                                "{args[0]}",
-                                "paras.page"
-                            ],
-                            "method" : "setQueryArgs",
-                            "redirection" : "other:callback:call"
-                        },
-                        {
-                            "desc" : "set size",
-                            "type" : "control",
-                            "target" : "api_list",
-                            "args" : [
-                                "{page.api_list.setQueryArgs()}",
-                                undefined,
-                                undefined,
-                                "{args[1]}",
-                                "paras.size"
-                            ],
-                            "method" : "setQueryArgs",
-                            "redirection" : "other:callback:call"
-                        },
-                        {
-                            "desc" : "call",
-                            "type" : "control",
-                            "target" : "api_list",
-                            "args" : [ ],
-                            "method" : "invoke",
-                            "onOK" : 0,
-                            "onKO" : 1
-                        },
-                        {
-                            "desc" : "if ok, callback",
-                            "type" : "other",
-                            "target" : "callback",
-                            "args" : [
-                                "{args[2]()}",
-                                undefined,
-                                undefined,
-                                "{temp.okData.data}"
-                            ],
-                            "method" : "call",
-                            "conditions" : [
-                                {
-                                    "left" : "{temp.okData.data}",
-                                    "symbol" : "non-empty",
-                                    "right" : ""
-                                }
-                            ]
-                        }
-                    ],
-                    "onOpenRecord" : [
-                        {
-                            "desc" : "postMessage",
-                            "type" : "page",
-                            "target" : "App.product",
-                            "args" : [
-                                "{page.postMessage()}",
-                                undefined,
-                                undefined,
-                                "set",
-                                "{args[0]}"
-                            ],
-                            "method" : "postMessage",
-                            "redirection" : "page::"
-                        },
-                        {
-                            "desc" : "show",
-                            "type" : "page",
-                            "target" : "App.product",
-                            "args" : [ ],
-                            "method" : "show"
-                        }
-                    ],
-                    "onDeleteRecords" : [
-                        {
-                            "desc" : "set api",
-                            "type" : "control",
-                            "target" : "api_del",
-                            "args" : [
-                                "{page.api_del.setQueryArgs()}",
-                                undefined,
-                                undefined,
-                                "{args[0]}",
-                                "paras.ids"
-                            ],
-                            "method" : "setQueryArgs",
-                            "redirection" : "other:callback:call"
-                        },
-                        {
-                            "desc" : "call api",
-                            "type" : "control",
-                            "target" : "api_del",
-                            "args" : [ ],
-                            "method" : "invoke",
-                            "onOK" : 0,
-                            "onKO" : 1
-                        },
-                        {
-                            "desc" : "callback",
-                            "type" : "other",
-                            "target" : "callback",
-                            "args" : [
-                                "{args[1]()}"
-                            ],
-                            "method" : "call",
-                            "conditions" : [
-                                {
-                                    "left" : "{temp.okData.data}",
-                                    "symbol" : "non-empty",
-                                    "right" : ""
-                                }
-                            ]
-                        }
-                    ],
-                    "onCreateRecords" : [
-                        {
-                            "desc" : "postmessage",
-                            "type" : "page",
-                            "target" : "App.product",
-                            "args" : [
-                                "{page.postMessage()}",
-                                undefined,
-                                undefined,
-                                "create"
-                            ],
-                            "method" : "postMessage",
-                            "redirection" : "page::"
-                        },
-                        {
-                            "desc" : "crete order",
-                            "type" : "page",
-                            "target" : "App.product",
-                            "args" : [ ],
-                            "method" : "show"
-                        }
-                    ],
-                    "onSelectRecord" : [
-                        {
-                            "desc" : "callback",
-                            "type" : "control",
-                            "target" : "xui_msgsvr",
-                            "args" : [
-                                "{page.xui_msgsvr.broadcast()}",
-                                undefined,
-                                undefined,
-                                "{page.properties.popfromkey}",
-                                "{page.properties.popfromvalue}",
-                                "{args[0]}",
-                                "{args[1]}",
-                                "{args[2]}"
-                            ],
-                            "method" : "broadcast",
-                            "redirection" : "other:callback:call"
-                        },
-                        {
-                            "desc" : "close",
-                            "type" : "control",
-                            "target" : "mainDlg",
-                            "args" : [ ],
-                            "method" : "destroy"
-                        }
-                    ]
-                })
-            );
-            
-            host.mainDlg.append(
                 xui.create("xui.UI.Button")
                 .setHost(host,"ctl_sbutton14")
-                .setLeft("15.833333333333334em")
-                .setTop("18.333333333333332em")
+                .setLeft("68.57142857142857em")
+                .setTop("40.38095238095238em")
                 .setWidth("7.5em")
                 .setCaption("Close")
                 .onClick([
@@ -290,6 +66,26 @@ xui.Class('App.products', 'xui.Module',{
                         "event" : 1
                     }
                 ])
+            );
+            
+            host.mainDlg.append(
+                xui.create("xui.UI.Block")
+                .setHost(host,"mainPane")
+                .setLeft("0.5333333333333333em")
+                .setTop("0.6095238095238096em")
+                .setWidth("74.74285714285715em")
+                .setHeight("39.161904761904765em")
+                .setBorderType("inset")
+            );
+            
+            host.mainPane.append(
+                xui.create("xui.UI.Element")
+                .setHost(host,"xui_ui_element3")
+                .setLeft("0.1523809523809524em")
+                .setTop("0.0761904761904762em")
+                .setWidth("73.52380952380952em")
+                .setHeight("38.32380952380952em")
+                .setHtml("<div><div>&lt;!DOCTYPE html&gt;</div><div>&lt;html lang=\"en\"&gt;</div><div>&lt;head&gt;</div><div>&nbsp; &lt;meta charset=\"UTF-8\"&gt;</div><div>&nbsp; &lt;title&gt;Iframe Example&lt;/title&gt;</div><div>&lt;/head&gt;</div><div>&lt;body&gt;</div><div><br></div><div>&nbsp; &lt;iframe&nbsp;</div><div>&nbsp; &nbsp; src=\"https://example.com\"&nbsp;</div><div>&nbsp; &nbsp; style=\"border:1px solid #ccc;\"&gt;</div><div>&nbsp; &lt;/iframe&gt;</div><div><br></div><div>&lt;/body&gt;</div><div>&lt;/html&gt;</div><div><br></div></div>")
             );
             
             append(
