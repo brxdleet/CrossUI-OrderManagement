@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Iframe Test</title>
+</head>
+<body>
+
+  <h1>Iframe Example</h1>
+
+  <iframe src="https://www.wikipedia.org" 
+          title="Wikipedia" 
+          width="800" 
+          height="600" 
+          frameborder="0">
+    Your browser does not support iframes.
+  </iframe>
+
+</body>
+</html>
