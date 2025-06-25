@@ -47,7 +47,9 @@ xui.Class('App', 'xui.Module',{
                             "{page.blkMain}"
                         ],
                         "method" : "show",
-                        "event" : 1
+                        "event" : 1,
+                        "timeout" : 0,
+                        "resetid" : ""
                     }
                 ])
             );
@@ -67,6 +69,7 @@ xui.Class('App', 'xui.Module',{
                 .setTop("0.9142857142857143em")
                 .setWidth("94.55238095238096em")
                 .setHeight("46.7047619047619em")
+                .setVisibility("hidden")
                 .setCaption("Vehicle Tracker")
             );
             
