@@ -14,7 +14,7 @@ xui.ini.$PageAppearance = {
 xui.ini.$DevEnv = {
     "designViewConf" : {
         "width" : 1280,
-        "height" : 1024
+        "height" : 720
     }
 };
 // ]]Develop Env Setting
