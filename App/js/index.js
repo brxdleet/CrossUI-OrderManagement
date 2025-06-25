@@ -22,19 +22,6 @@ xui.Class('App', 'xui.Module',{
             );
             
             append(
-                xui.create("xui.APICaller")
-                .setHost(host,"api_del")
-                .setQueryURL("{xui.constant.request_url")
-                .setQueryArgs({
-                    "key" : "orders",
-                    "paras" : {
-                        "action" : "delete"
-                    }
-                })
-                .setProxyType("auto")
-            );
-            
-            append(
                 xui.create("xui.UI.Block")
                 .setHost(host,"ctl_block3")
                 .setDock("top")
@@ -44,77 +31,25 @@ xui.Class('App', 'xui.Module',{
             );
             
             host.ctl_block3.append(
-                xui.create("xui.UI.Div")
-                .setHost(host,"ctl_pane13")
-                .setLeft("-0.0761904761904762em")
-                .setTop("0.6857142857142857em")
-                .setWidth("89.75238095238095em")
-                .setHeight("4.444444444444445em")
-                .setRight("0.35555555555555557em")
-                .setPanelBgClr("transparent")
-            );
-            
-            host.ctl_pane13.append(
-                xui.create("xui.UI.StatusButtons")
-                .setHost(host,"ctl_statusbuttons1")
-                .setItems([
+                xui.create("xui.UI.Button")
+                .setHost(host,"xui_ui_button16")
+                .setLeft("0.6857142857142857em")
+                .setTop("1.4476190476190476em")
+                .setWidth("13.561904761904762em")
+                .setHeight("3.580952380952381em")
+                .setCaption("Vehicle Tracker")
+                .onClick([
                     {
-                        "id" : "info",
-                        "caption" : "Company Information",
-                        "image" : "{/}img/app.png",
-                        "imagePos" : "-112px 0 "
-                    },
-                    {
-                        "id" : "shipping",
-                        "caption" : "Shipping Methods",
-                        "image" : "{/}img/app.png",
-                        "imagePos" : "-64px 0 "
-                    },
-                    {
-                        "id" : "payment",
-                        "caption" : "Payment Methods",
-                        "image" : "{/}img/app.png",
-                        "imagePos" : "-80px 0 "
-                    },
-                    {
-                        "id" : "employee",
-                        "caption" : "Employees",
-                        "image" : "{/}img/app.png",
-                        "imagePos" : "-16px 0 "
-                    },
-                    {
-                        "id" : "prd",
-                        "caption" : "Products",
-                        "image" : "{/}img/app.png",
-                        "imagePos" : "-48px 0 "
-                    },
-                    {
-                        "id" : "customer",
-                        "caption" : "Customers",
-                        "image" : "{/}img/app.png",
-                        "imagePos" : "-32px 0 "
-                    },
-                    {
-                        "id" : "new order",
-                        "caption" : "New Order",
-                        "image" : "{/}img/app.png"
+                        "desc" : "Action 1",
+                        "type" : "control",
+                        "target" : "xui_ui_panel10",
+                        "args" : [
+                            "{page.blkMain}"
+                        ],
+                        "method" : "show",
+                        "event" : 1
                     }
                 ])
-                .setLeft("-20em")
-                .setTop("3em")
-                .setWidth("74.28571428571429em")
-                .setHeight("2.4380952380952383em")
-                .setPosition("static")
-                .setSelMode("none")
-                .setBorderType("none")
-                .setItemMargin("2px 4px")
-                .setItemWidth("13.333333333333334em")
-                .setValue("")
-                .setCustomStyle({
-                    "ITEM" : {
-                        "text-align" : "left"
-                    }
-                })
             );
             
             append(
@@ -122,6 +57,17 @@ xui.Class('App', 'xui.Module',{
                 .setHost(host,"blkMain")
                 .setDock("fill")
                 .setBorderType("none")
+            );
+            
+            host.blkMain.append(
+                xui.create("xui.UI.Panel")
+                .setHost(host,"xui_ui_panel10")
+                .setDock("none")
+                .setLeft("1.5238095238095237em")
+                .setTop("0.9142857142857143em")
+                .setWidth("94.55238095238096em")
+                .setHeight("46.7047619047619em")
+                .setCaption("Vehicle Tracker")
             );
             
             return children;
