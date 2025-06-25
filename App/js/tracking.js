@@ -82,10 +82,11 @@ xui.Class('App.products', 'xui.Module',{
                 xui.create("xui.UI.Element")
                 .setHost(host,"xui_ui_element3")
                 .setLeft("0.1523809523809524em")
-                .setTop("0.0761904761904762em")
+                .setTop("-10.666666666666666em")
                 .setWidth("73.52380952380952em")
-                .setHeight("38.32380952380952em")
-                .setHtml("<div><div>&lt;!DOCTYPE html&gt;</div><div>&lt;html lang=\"en\"&gt;</div><div>&lt;head&gt;</div><div>&nbsp; &lt;meta charset=\"UTF-8\"&gt;</div><div>&nbsp; &lt;title&gt;Iframe Example&lt;/title&gt;</div><div>&lt;/head&gt;</div><div>&lt;body&gt;</div><div><br></div><div>&nbsp; &lt;iframe&nbsp;</div><div>&nbsp; &nbsp; src=\"https://example.com\"&nbsp;</div><div>&nbsp; &nbsp; style=\"border:1px solid #ccc;\"&gt;</div><div>&nbsp; &lt;/iframe&gt;</div><div><br></div><div>&lt;/body&gt;</div><div>&lt;/html&gt;</div><div><br></div></div>")
+                .setHeight("49.06666666666667em")
+                .setPosition("static")
+                .setHtml("<meta charset=\"UTF-8\">\n    <title>\n        Iframe Example\n    </title>\n    <iframe src=\"https://fcsfleet.ford.com/live-map/vehicles\" \"=\"\">\n    </iframe>\n")
             );
             
             append(
