@@ -12,26 +12,26 @@ xui.Class('App', 'xui.Module',{
                 xui.create("xui.APICaller")
                 .setHost(host,"api_list")
                 .setQueryURL("{xui.constant.request_url}")
-                .setProxyType("auto")
                 .setQueryArgs({
                     "key" : "orders",
                     "paras" : {
                         "action" : "list"
                     }
                 })
+                .setProxyType("auto")
             );
             
             append(
                 xui.create("xui.APICaller")
                 .setHost(host,"api_del")
                 .setQueryURL("{xui.constant.request_url")
-                .setProxyType("auto")
                 .setQueryArgs({
                     "key" : "orders",
                     "paras" : {
                         "action" : "delete"
                     }
                 })
+                .setProxyType("auto")
             );
             
             append(
@@ -395,9 +395,9 @@ xui.Class('App', 'xui.Module',{
             host.ctl_block3.append(
                 xui.create("xui.UI.Label")
                 .setHost(host,"ctl_slabel28")
-                .setLeft("3.2916666666666665em")
-                .setTop("0.7916666666666666em")
-                .setCaption("Manage Orders")
+                .setLeft("-0.041666666666666664em")
+                .setTop("-0.4583333333333333em")
+                .setCaption("Parts Assist")
                 .setCustomStyle({
                     "KEY" : {
                         "font-size" : "18pt",
