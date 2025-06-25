@@ -38,7 +38,7 @@ xui.Class('App', 'xui.Module',{
                 xui.create("xui.UI.Panel")
                 .setHost(host,"ctl_panel11")
                 .setDock("right")
-                .setWidth("16.88888888888889em")
+                .setWidth("14.476190476190476em")
                 .setOverflow("overflow-x:hidden;overflow-y:auto")
                 .setCaption("Setup")
                 .setImageClass("xui-uicmd-opt")
@@ -92,10 +92,10 @@ xui.Class('App', 'xui.Module',{
                         "imagePos" : "-96px 0 "
                     }
                 ])
-                .setLeft("0.5333333333333333em")
-                .setTop("0.8888888888888888em")
-                .setWidth("15.2em")
-                .setHeight("22.22222222222222em")
+                .setLeft("-0.45714285714285713em")
+                .setTop("-0.38095238095238093em")
+                .setWidth("8.99047619047619em")
+                .setHeight("19.961904761904762em")
                 .setSelMode("none")
                 .setBorderType("none")
                 .setItemMargin("2px 4px")
@@ -222,41 +222,6 @@ xui.Class('App', 'xui.Module',{
                 })
             );
             
-            host.ctl_panel11.append(
-                xui.create("xui.UI.Image")
-                .setHost(host,"ctl_image24")
-                .setLeft("2.7555555555555555em")
-                .setTop("22.333333333333332em")
-                .setSrc("{/}img/setup.png")
-            );
-            
-            host.ctl_panel11.append(
-                xui.create("xui.UI.Link")
-                .setHost(host,"ctl_link1")
-                .setLeft("2.7555555555555555em")
-                .setTop("33.31111111111111em")
-                .setWidth("12.444444444444445em")
-                .setHeight("1.7777777777777777em")
-                .setCaption("Download source code")
-                .onClick([
-                    {
-                        "desc" : "Action 1",
-                        "type" : "other",
-                        "target" : "url",
-                        "args" : [
-                            "http://www.crossui.com/download.html"
-                        ],
-                        "method" : "open--_blank",
-                        "event" : 1
-                    }
-                ])
-                .setCustomStyle({
-                    "KEY" : {
-                        "font-style" : "italic"
-                    }
-                })
-            );
-            
             append(
                 xui.create("xui.UI.Block")
                 .setHost(host,"ctl_block3")
@@ -273,44 +238,6 @@ xui.Class('App', 'xui.Module',{
                 .setHeight("4.444444444444445em")
                 .setRight("0.35555555555555557em")
                 .setPanelBgClr("transparent")
-            );
-            
-            host.ctl_pane13.append(
-                xui.create("xui.UI.Label")
-                .setHost(host,"ctl_slabel53")
-                .setLeft("32.888888888888886em")
-                .setTop("2.4em")
-                .setCaption("Powered by ")
-                .setCustomStyle({
-                    "KEY" : {
-                        "font-style" : "italic"
-                    }
-                })
-            );
-            
-            host.ctl_pane13.append(
-                xui.create("xui.UI.Image")
-                .setHost(host,"ctl_image25")
-                .setLeft("39.111111111111114em")
-                .setTop("1.511111111111111em")
-                .setSrc("http://www.crossui.com/img/logo2.png")
-                .onClick([
-                    {
-                        "desc" : "open",
-                        "type" : "other",
-                        "target" : "url",
-                        "args" : [
-                            "http://www.crossui.com"
-                        ],
-                        "method" : "open--_blank",
-                        "event" : 1
-                    }
-                ])
-                .setCustomStyle({
-                    "KEY" : {
-                        "cursor" : "pointer"
-                    }
-                })
             );
             
             host.ctl_pane13.append(
@@ -388,22 +315,6 @@ xui.Class('App', 'xui.Module',{
                             "orient" : "C"
                         },
                         "transform" : "rotate(331deg) scale(1,1) skew(0deg,0deg) translate(0px,0px)"
-                    }
-                })
-            );
-            
-            host.ctl_block3.append(
-                xui.create("xui.UI.Label")
-                .setHost(host,"ctl_slabel28")
-                .setLeft("-0.041666666666666664em")
-                .setTop("-0.4583333333333333em")
-                .setCaption("Parts Assist")
-                .setCustomStyle({
-                    "KEY" : {
-                        "font-size" : "18pt",
-                        "font-weight" : "normal",
-                        "color" : "#000080",
-                        "text-shadow" : "0px 0px 8px #20B2AA"
                     }
                 })
             );
