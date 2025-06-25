@@ -240,57 +240,6 @@ xui.Class('App', 'xui.Module',{
                 .setPanelBgClr("transparent")
             );
             
-            host.ctl_pane13.append(
-                xui.create("xui.UI.Label")
-                .setHost(host,"ctl_slabel103")
-                .setLeft("16.88888888888889em")
-                .setTop("2.2222222222222223em")
-                .setCaption("Theme:")
-            );
-            
-            host.ctl_pane13.append(
-                xui.create("xui.UI.ComboInput")
-                .setHost(host,"ctl_comboinput29")
-                .setDirtyMark(false)
-                .setLeft("21.6em")
-                .setTop("1.8666666666666667em")
-                .setWidth("8em")
-                .setType("listbox")
-                .setItems([
-                    {
-                        "id" : "default",
-                        "caption" : "Default"
-                    },
-                    {
-                        "id" : "vista",
-                        "caption" : "Vista"
-                    },
-                    {
-                        "id" : "moonify",
-                        "caption" : "Moonify"
-                    },
-                    {
-                        "id" : "army",
-                        "caption" : "Army"
-                    }
-                ])
-                .setValue("default")
-                .onChange([
-                    {
-                        "desc" : "Action 1",
-                        "type" : "other",
-                        "target" : "callback",
-                        "args" : [
-                            "{xui.setTheme()}",
-                            undefined,
-                            undefined,
-                            "{args[2]}"
-                        ],
-                        "method" : "call"
-                    }
-                ])
-            );
-            
             append(
                 xui.create("xui.UI.Block")
                 .setHost(host,"blkMain")
