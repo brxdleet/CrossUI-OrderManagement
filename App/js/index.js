@@ -44,12 +44,21 @@ xui.Class('App', 'xui.Module',{
                         "type" : "page",
                         "target" : "App.tracking",
                         "args" : [
-                            "{page.xui_ui_panel10}"
+                            "{page.popUp()}"
                         ],
-                        "method" : "show",
+                        "method" : "popUp",
                         "event" : 1,
-                        "timeout" : 0,
-                        "resetid" : ""
+                        "redirection" : "page::"
+                    },
+                    {
+                        "desc" : "Action 2",
+                        "type" : "page",
+                        "target" : "App.tracking",
+                        "args" : [
+                            "{page.popUp()}"
+                        ],
+                        "method" : "popUp",
+                        "redirection" : "page::"
                     }
                 ])
             );
