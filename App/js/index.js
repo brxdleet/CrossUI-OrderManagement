@@ -209,7 +209,7 @@ xui.Class('App', 'xui.Module',{
                                     },
                                     {
                                         "id" : "FreightCharge",
-                                        "caption" : "Freight Charge",
+                                        "caption" : "Delivery Charge",
                                         "width" : "8em",
                                         "type" : "currency"
                                     },
