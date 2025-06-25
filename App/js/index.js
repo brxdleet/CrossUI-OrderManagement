@@ -41,10 +41,10 @@ xui.Class('App', 'xui.Module',{
                 .onClick([
                     {
                         "desc" : "Action 1",
-                        "type" : "control",
-                        "target" : "xui_ui_panel10",
+                        "type" : "page",
+                        "target" : "App.tracking",
                         "args" : [
-                            "{page.blkMain}"
+                            "{page.xui_ui_panel10}"
                         ],
                         "method" : "show",
                         "event" : 1,
