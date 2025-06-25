@@ -291,34 +291,6 @@ xui.Class('App', 'xui.Module',{
                 ])
             );
             
-            host.ctl_block3.append(
-                xui.create("xui.UI.Image")
-                .setHost(host,"ctl_image3")
-                .setLeft("0.8888888888888888em")
-                .setTop("0.8888888888888888em")
-                .setSrc("{/}img/order.png")
-                .setCustomStyle({
-                    "KEY" : {
-                        "$gradient" : {
-                            "stops" : [
-                                {
-                                    "pos" : "52%",
-                                    "clr" : "#FFFF00"
-                                },
-                                {
-                                    "pos" : "100%",
-                                    "clr" : "#FFFFFF",
-                                    "opacity" : 0
-                                }
-                            ],
-                            "type" : "radial",
-                            "orient" : "C"
-                        },
-                        "transform" : "rotate(331deg) scale(1,1) skew(0deg,0deg) translate(0px,0px)"
-                    }
-                })
-            );
-            
             append(
                 xui.create("xui.UI.Block")
                 .setHost(host,"blkMain")
