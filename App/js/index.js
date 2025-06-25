@@ -44,7 +44,26 @@ xui.Class('App', 'xui.Module',{
                 .setImageClass("xui-uicmd-opt")
             );
             
-            host.ctl_panel11.append(
+            append(
+                xui.create("xui.UI.Block")
+                .setHost(host,"ctl_block3")
+                .setDock("top")
+                .setHeight("4.444444444444445em")
+                .setOverflow("hidden")
+            );
+            
+            host.ctl_block3.append(
+                xui.create("xui.UI.Div")
+                .setHost(host,"ctl_pane13")
+                .setLeft("-0.0761904761904762em")
+                .setTop("0.6857142857142857em")
+                .setWidth("47.82222222222222em")
+                .setHeight("4.444444444444445em")
+                .setRight("0.35555555555555557em")
+                .setPanelBgClr("transparent")
+            );
+            
+            host.ctl_pane13.append(
                 xui.create("xui.UI.StatusButtons")
                 .setHost(host,"ctl_statusbuttons1")
                 .setItems([
@@ -92,10 +111,11 @@ xui.Class('App', 'xui.Module',{
                         "imagePos" : "-96px 0 "
                     }
                 ])
-                .setLeft("-0.45714285714285713em")
-                .setTop("-0.38095238095238093em")
-                .setWidth("8.99047619047619em")
-                .setHeight("19.961904761904762em")
+                .setLeft("-53.63809523809524em")
+                .setTop("5.942857142857143em")
+                .setWidth("120em")
+                .setHeight("2.9714285714285715em")
+                .setPosition("static")
                 .setSelMode("none")
                 .setBorderType("none")
                 .setItemMargin("2px 4px")
@@ -220,24 +240,6 @@ xui.Class('App', 'xui.Module',{
                         "text-align" : "left"
                     }
                 })
-            );
-            
-            append(
-                xui.create("xui.UI.Block")
-                .setHost(host,"ctl_block3")
-                .setDock("top")
-                .setHeight("4.444444444444445em")
-                .setOverflow("hidden")
-            );
-            
-            host.ctl_block3.append(
-                xui.create("xui.UI.Div")
-                .setHost(host,"ctl_pane13")
-                .setTop("0em")
-                .setWidth("47.82222222222222em")
-                .setHeight("4.444444444444445em")
-                .setRight("0.35555555555555557em")
-                .setPanelBgClr("transparent")
             );
             
             append(
