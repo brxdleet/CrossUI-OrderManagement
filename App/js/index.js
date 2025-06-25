@@ -58,6 +58,7 @@ xui.Class('App', 'xui.Module',{
                 xui.create("xui.UI.Block")
                 .setHost(host,"blkMain")
                 .setDock("fill")
+                .setVisibility("visible")
                 .setBorderType("none")
             );
             
