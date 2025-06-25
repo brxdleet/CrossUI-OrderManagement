@@ -47,7 +47,7 @@ xui.Class('App', 'xui.Module',{
                 .setHost(host,"ctl_pane13")
                 .setLeft("-0.0761904761904762em")
                 .setTop("0.6857142857142857em")
-                .setWidth("47.82222222222222em")
+                .setWidth("89.75238095238095em")
                 .setHeight("4.444444444444445em")
                 .setRight("0.35555555555555557em")
                 .setPanelBgClr("transparent")
@@ -94,16 +94,14 @@ xui.Class('App', 'xui.Module',{
                         "imagePos" : "-32px 0 "
                     },
                     {
-                        "id" : "feedback",
-                        "caption" : "Provide Feedback",
-                        "itemStyle" : "font-weight:bold",
-                        "image" : "{/}img/app.png",
-                        "imagePos" : "-96px 0 "
+                        "id" : "new order",
+                        "caption" : "New Order",
+                        "image" : "{/}img/app.png"
                     }
                 ])
-                .setLeft("-39.161904761904765em")
-                .setTop("5.942857142857143em")
-                .setWidth("71.23809523809524em")
+                .setLeft("-20em")
+                .setTop("3em")
+                .setWidth("74.28571428571429em")
                 .setHeight("2.4380952380952383em")
                 .setPosition("static")
                 .setSelMode("none")
@@ -111,120 +109,6 @@ xui.Class('App', 'xui.Module',{
                 .setItemMargin("2px 4px")
                 .setItemWidth("13.333333333333334em")
                 .setValue("")
-                .onClick([
-                    {
-                        "desc" : "info",
-                        "type" : "page",
-                        "target" : "App.companyInfo",
-                        "args" : [ ],
-                        "method" : "show",
-                        "event" : 2,
-                        "conditions" : [
-                            {
-                                "left" : "{args[1].id}",
-                                "symbol" : "=",
-                                "right" : "info"
-                            }
-                        ],
-                        "return" : false
-                    },
-                    {
-                        "desc" : "shipping",
-                        "type" : "page",
-                        "target" : "App.shippingMethods",
-                        "args" : [ ],
-                        "method" : "show",
-                        "conditions" : [
-                            {
-                                "left" : "{args[1].id}",
-                                "symbol" : "=",
-                                "right" : "shipping"
-                            }
-                        ],
-                        "return" : false
-                    },
-                    {
-                        "desc" : "payment",
-                        "type" : "page",
-                        "target" : "App.paymentMethods",
-                        "args" : [ ],
-                        "method" : "show",
-                        "conditions" : [
-                            {
-                                "left" : "{args[1].id}",
-                                "symbol" : "=",
-                                "right" : "payment"
-                            }
-                        ],
-                        "return" : false
-                    },
-                    {
-                        "desc" : "employee",
-                        "type" : "page",
-                        "target" : "App.employees",
-                        "args" : [ ],
-                        "method" : "show",
-                        "conditions" : [
-                            {
-                                "left" : "{args[1].id}",
-                                "symbol" : "=",
-                                "right" : "employee"
-                            }
-                        ],
-                        "return" : false
-                    },
-                    {
-                        "desc" : "prd",
-                        "type" : "page",
-                        "target" : "App.products",
-                        "args" : [ ],
-                        "method" : "show",
-                        "conditions" : [
-                            {
-                                "left" : "{args[1].id}",
-                                "symbol" : "=",
-                                "right" : "prd"
-                            }
-                        ],
-                        "return" : false
-                    },
-                    {
-                        "desc" : "customer",
-                        "type" : "page",
-                        "target" : "App.customers",
-                        "args" : [ ],
-                        "method" : "show",
-                        "conditions" : [
-                            {
-                                "left" : "{args[1].id}",
-                                "symbol" : "=",
-                                "right" : "customer"
-                            }
-                        ],
-                        "return" : false
-                    },
-                    {
-                        "desc" : "feedback",
-                        "type" : "other",
-                        "target" : "url",
-                        "args" : [
-                            "support@crossui.com",
-                            {
-                                "subject" : "Feedback on CrossUI Order Management"
-                            }
-                        ],
-                        "method" : "mailTo",
-                        "conditions" : [
-                            {
-                                "left" : "{args[1].id}",
-                                "symbol" : "=",
-                                "right" : "feedback"
-                            }
-                        ],
-                        "timeout" : 0,
-                        "return" : false
-                    }
-                ])
                 .setCustomStyle({
                     "ITEM" : {
                         "text-align" : "left"
