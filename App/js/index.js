@@ -35,20 +35,10 @@ xui.Class('App', 'xui.Module',{
             );
             
             append(
-                xui.create("xui.UI.Panel")
-                .setHost(host,"ctl_panel11")
-                .setDock("right")
-                .setWidth("14.476190476190476em")
-                .setOverflow("overflow-x:hidden;overflow-y:auto")
-                .setCaption("Setup")
-                .setImageClass("xui-uicmd-opt")
-            );
-            
-            append(
                 xui.create("xui.UI.Block")
                 .setHost(host,"ctl_block3")
                 .setDock("top")
-                .setHeight("4.444444444444445em")
+                .setHeight("7.466666666666667em")
                 .setOverflow("hidden")
             );
             
@@ -111,10 +101,10 @@ xui.Class('App', 'xui.Module',{
                         "imagePos" : "-96px 0 "
                     }
                 ])
-                .setLeft("-53.63809523809524em")
+                .setLeft("-39.161904761904765em")
                 .setTop("5.942857142857143em")
-                .setWidth("120em")
-                .setHeight("2.9714285714285715em")
+                .setWidth("71.23809523809524em")
+                .setHeight("2.4380952380952383em")
                 .setPosition("static")
                 .setSelMode("none")
                 .setBorderType("none")
@@ -254,24 +244,19 @@ xui.Class('App', 'xui.Module',{
                 .setHost(host,"module_grideditor1")
                 .setProperties({
                     "__inner_coms_prf__" : {
-                        "xui_msgs1" : {
-                            "properties" : {
-                                "msgType" : "orders"
-                            }
-                        },
                         "grid" : {
                             "properties" : {
                                 "header" : [
                                     {
                                         "id" : "OrderID",
                                         "caption" : "Order ID",
-                                        "width" : "4em",
+                                        "width" : "4.038095238095238em",
                                         "type" : "input"
                                     },
                                     {
                                         "id" : "CustomerID",
                                         "caption" : "CustomerID",
-                                        "width" : "3em",
+                                        "width" : "2.9714285714285715em",
                                         "hidden" : true,
                                         "type" : "input"
                                     },
@@ -284,7 +269,7 @@ xui.Class('App', 'xui.Module',{
                                     {
                                         "id" : "EmployeeID",
                                         "caption" : "EmployeeID",
-                                        "width" : "3em",
+                                        "width" : "2.9714285714285715em",
                                         "hidden" : true,
                                         "type" : "input"
                                     },
@@ -359,7 +344,7 @@ xui.Class('App', 'xui.Module',{
                                     {
                                         "id" : "Comment",
                                         "caption" : "Comment",
-                                        "width" : "12em",
+                                        "width" : "12.038095238095238em",
                                         "type" : "textarea"
                                     }
                                 ],
